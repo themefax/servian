@@ -3,15 +3,20 @@ $(function () {
     "use strict";
 
 
+    // MENU FIX
+    $(window).scroll(function () {
+        const mainMenu = $('.main_menu');
+        if (mainMenu.offset() != undefined) {
+            if ($(window).scrollTop() > 1) {
+                mainMenu.addClass('menu_fix');
+            } else {
+                mainMenu.removeClass('menu_fix');
+            }
+        }
+    });
 
 
-
-
-
-
-
-
-    //MENU SEARCH
+    // MENU SEARCH
     $(".search").on("click", function () {
         $(".menu_search").addClass("show_search");
     });
@@ -25,6 +30,8 @@ $(function () {
     $('.select_js').niceSelect();
 
 
+    // VENIBOX JS
+    $('.venobox').venobox();
 
 
 
