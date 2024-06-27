@@ -859,25 +859,155 @@ button {
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+    height: 100vh;
 }
 
-.banner_text {}
+.banner div {
+    height: 100%;
+}
 
-.banner_text h5 {}
+.banner_text {
+    padding-top: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
 
-.banner_text h1 {}
+.banner_text h5 {
+    color: var(--colorYellow);
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 30px;
+}
 
-.banner_text ul {}
+.banner_text h5::after {
+    position: absolute;
+    content: "";
+    background: url(../images/banner_heading_shappes.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+}
+
+.banner_text h1 {
+    color: var(--colorWhite);
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 84px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.banner_text p {
+    color: var(--colorWhite);
+    font-size: 18px;
+    font-weight: 400;
+    opacity: .8;
+}
+
+.banner_text ul {
+    gap: 30px;
+    margin-top: 30px;
+}
 
 .banner_text ul li {}
 
-.banner_text ul li .common_btn {}
+.banner_text ul li .common_btn {
+    margin-top: 5px;
+}
 
-.banner_text ul li .venobox {}
+.banner_text ul li .common_btn:hover {
+    color: var(--colorPrimary);
+}
 
-.banner_text ul li span {}
+.banner_text ul li .common_btn::after {
+    background: var(--colorWhite);
+}
 
+.banner_text ul li .venobox {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    background: var(--colorWhite);
+    border-radius: 50%;
+    color: var(--colorPrimary);
+    position: relative;
+    z-index: 1;
+}
 
+.banner_text ul li .venobox::after {
+    position: absolute;
+    content: "";
+    background: var(--colorWhite);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 55px;
+    height: 55px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: -1;
+    animation: play_animi 1.5s linear infinite;
+    -webkit-animation: play_animi 1.5s linear infinite;
+    -moz-animation: play_animi 1.5s linear infinite;
+    -ms-animation: play_animi 1.5s linear infinite;
+    -o-animation: play_animi 1.5s linear infinite;
+}
+
+@keyframes play_animi {
+    from {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.banner_text ul li span {
+    color: var(--colorWhite);
+    font-family: var(--headingFont);
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.banner_img {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+
+.banner_img .img {
+    width: 850px;
+    height: 700px;
+    margin-right: -200px;
+}
 
 
 
