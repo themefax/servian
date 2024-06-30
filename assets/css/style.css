@@ -95,11 +95,11 @@ img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    transition: all linear .3s;
-    -webkit-transition: all linear .3s;
-    -moz-transition: all linear .3s;
-    -ms-transition: all linear .3s;
-    -o-transition: all linear .3s;
+    transition: all linear 1s;
+    -webkit-transition: all linear 1s;
+    -moz-transition: all linear 1s;
+    -ms-transition: all linear 1s;
+    -o-transition: all linear 1s;
 }
 
 input,
@@ -386,10 +386,12 @@ button {
     -moz-transition: all linear .3s;
     -ms-transition: all linear .3s;
     -o-transition: all linear .3s;
+    display: inline-block;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    position: relative;
 }
 
 .title:hover {
@@ -475,6 +477,39 @@ button {
 }
 
 /* breadcrumb end */
+
+
+
+/* all card hover effects start */
+@keyframes hoverAnimi {
+    100% {
+        left: 125%;
+    }
+}
+
+.single_services_img::before {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    -ms-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+}
+
+.single_services:hover .single_services_img:before {
+    animation: hoverAnimi 1.2s;
+    -webkit-animation: hoverAnimi 1.2s;
+}
+
+
+
+/* all card hover effects end */
+
 /*==========================
     GLOBAL CSS END
 ==========================*/
@@ -802,10 +837,10 @@ button {
     display: block;
     width: 50px;
     height: 50px;
-    background: var(--colorWhite);
+    color: var(--colorWhite);
     line-height: 50px;
     text-align: center;
-    color: var(--colorRed);
+    background: var(--colorRed);
     position: absolute;
     top: -85px;
     right: 0;
@@ -819,8 +854,8 @@ button {
 }
 
 .menu_search form .close_search:hover {
-    background: var(--colorRed);
-    color: var(--colorWhite);
+    background: var(--colorYellow);
+    color: var(--colorBlack);
 }
 
 .menu_search.show_search {
@@ -1000,13 +1035,23 @@ button {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 200px;
-    height: 210px;
+    width: 215px;
+    height: 180px;
     bottom: 0;
     left: 0;
     z-index: 1;
-    animation: zoomAnimi linear 3s infinite alternate;
-    -webkit-animation: zoomAnimi linear 3s infinite alternate;
+    animation: aboutAnimi linear 1s infinite alternate;
+    -webkit-animation: aboutAnimi linear 1s infinite alternate;
+}
+
+@keyframes aboutAnimi {
+    from {
+        left: -20px;
+    }
+
+    to {
+        left: 0;
+    }
 }
 
 .about_us::before {
@@ -1156,6 +1201,11 @@ button {
     margin-left: 15px;
     box-shadow: 0px 10px 50px 0px rgb(128 128 128 / 10%);
     margin-top: 25px;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
 }
 
 .single_services_img {
@@ -1169,16 +1219,16 @@ button {
     background: var(--colorYellow);
     color: var(--colorBlack);
     padding: 20px 50px 10px 50px;
-    /* padding-right: 5px; */
     display: block;
     position: absolute;
     top: -10px;
     left: -44px;
     transform: rotate(-43deg);
-    /* -webkit-transform: rotate(-43deg); */
+    -webkit-transform: rotate(-43deg);
     -moz-transform: rotate(-43deg);
     -ms-transform: rotate(-43deg);
     -o-transform: rotate(-43deg);
+    z-index: 9;
 }
 
 .single_services_img .trending {
@@ -1187,7 +1237,6 @@ button {
 
 .single_services_img .trending i {
     transform: rotate(75deg);
-    /* -webkit-transform: rotate(75deg); */
     -moz-transform: rotate(75deg);
     -ms-transform: rotate(75deg);
     -o-transform: rotate(75deg);
@@ -1196,7 +1245,6 @@ button {
 .single_services_img .new {
     background: var(--colorPrimary);
     color: var(--colorWhite);
-    /* padding-top: 18px; */
     text-transform: capitalize;
     font-size: 13px;
     font-weight: 600;
@@ -1209,7 +1257,7 @@ button {
 
 .single_services_text ul {
     justify-content: space-between;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .single_services_text ul li {
@@ -1218,13 +1266,10 @@ button {
     align-items: center;
     gap: 10px;
     color: var(--colorBlack);
-
-
-    /* Title Text/Subtiltle - S3 */
     font-family: var(--headingFont);
     font-size: 16px;
     font-weight: 600;
-    /* 162.5% */
+    text-transform: capitalize;
 }
 
 .single_services_text ul li .img {
@@ -1249,14 +1294,10 @@ button {
     color: var(--colorBlack);
 }
 
-/* .title {} */
-
-.single_services_text .title {}
-
 .single_services_text .rating {
     color: var(--ratingColor);
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 .single_services_text .rating span {
@@ -1274,18 +1315,11 @@ button {
     font-weight: 700;
 }
 
-
-
-
+.single_services:hover {
+    transform: translateY(-10px);
+}
 
 /* services end */
-
-
-
-
-
-
-
 
 /*==========================
     HOME PAGE 01 END
