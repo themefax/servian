@@ -1529,9 +1529,50 @@ button {
 /* portfolio end */
 
 /* why choose us start */
-.why_choose_us {}
+.why_choose_us {
+    position: relative;
+}
 
-.why_choose_text {}
+.why_choose_us::after {
+    position: absolute;
+    content: "";
+    width: 335px;
+    height: 280px;
+    background: url(../images/why_choose_shapes_1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: -10px;
+    right: 0;
+    z-index: -1;
+    animation: why_choose_animi linear 2.5s infinite alternate;
+    -webkit-animation: why_choose_animi linear 2.5s infinite alternate;
+}
+
+@keyframes why_choose_animi {
+    from {
+        right: 0px;
+    }
+
+    to {
+        right: 70px;
+    }
+}
+
+.why_choose_us::before {
+    position: absolute;
+    content: "";
+    width: 165px;
+    height: 200px;
+    background: url(../images/why_choose_shapes_2.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    animation: aboutAnimi linear 1s infinite alternate;
+}
 
 .why_choose_text ul {
     display: flex;
@@ -1570,13 +1611,13 @@ button {
     border-radius: 210px;
 }
 
-
-
-
-
 /* why choose us end */
 
+/* counter start */
 
+
+
+/* counter end */
 
 
 
