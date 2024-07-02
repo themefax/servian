@@ -34,5 +34,44 @@ $(function () {
     $('.venobox').venobox();
 
 
+    // PORTFOLIO SLIDER
+    $('.portfolio_slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        centerMode: true,
+        centerPadding: '0px',
+        dots: false,
+        arrows: false,
+
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+
 
 });

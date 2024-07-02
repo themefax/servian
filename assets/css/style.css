@@ -137,6 +137,7 @@ button {
     --colorBlack: #16171A;
     --colorWhite: #ffffff;
     --ratingColor: #FFC700;
+    --LightBg: #ecf6ff;
     --headingFont: "Raleway", sans-serif;
     --paraFont: "DM Sans", sans-serif;
 }
@@ -284,13 +285,14 @@ button {
     font-size: 20px;
     font-weight: 700;
     position: relative;
-    padding-left: 30px;
+    padding: 0px 30px;
     margin-bottom: 15px;
     display: inline-block;
     text-transform: uppercase;
 }
 
-.section_heading h5::after {
+.section_heading h5::after,
+.section_heading h5::before {
     position: absolute;
     content: "";
     background: url(../images/heading_shapes.svg);
@@ -301,6 +303,16 @@ button {
     height: 20px;
     top: 1px;
     left: 0;
+}
+
+.section_heading h5::before {
+    left: auto;
+    right: 0;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
 }
 
 .section_heading h2 {
@@ -314,6 +326,14 @@ button {
 .left_heading h5,
 .left_heading h2 {
     text-align: left;
+}
+
+.left_heading h5 {
+    padding-right: 0;
+}
+
+.left_heading h5::before {
+    display: none;
 }
 
 .slick-dots {
@@ -1317,9 +1337,188 @@ button {
 
 .single_services:hover {
     transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
 }
 
 /* services end */
+
+/* team start */
+.team {}
+
+.single_team {
+    padding: 20px;
+    background: var(--LightBg);
+    margin-top: 25px;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+}
+
+.single_team .single_team_img {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.single_team .single_team_img img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.single_team .single_team_img span {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: var(--colorYellow);
+    color: var(--colorBlack);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.single_team .single_team_img ul {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    padding-bottom: 50px;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+    opacity: 0;
+}
+
+.single_team .single_team_img ul li {}
+
+.single_team .single_team_img ul li a {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: var(--colorWhite);
+    color: var(--colorBlack);
+    border-radius: 50%;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 14px;
+}
+
+.single_team .single_team_img ul li a:hover {
+    background: var(--colorYellow);
+    color: var(--colorBlack);
+}
+
+.single_team:hover .single_team_img ul {
+    right: 30px;
+    opacity: 1;
+}
+
+.single_team .single_team_text {
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.single_team .single_team_text a {
+    text-align: center;
+}
+
+.single_team .single_team_text p {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+}
+
+.single_team:hover {
+    background: var(--colorPrimary);
+    transform: translateY(-10px);
+}
+
+.single_team:hover a,
+.single_team:hover p {
+    color: var(--colorWhite);
+}
+
+.single_team .title:hover {
+    color: var(--colorYellow);
+}
+
+/* team end */
+
+/* portfolio start */
+
+.single_portfolio {
+    height: 390px;
+    position: relative;
+    border-right: 1px solid #ececec;
+    overflow: hidden;
+}
+
+.single_portfolio .text {
+    background: linear-gradient(181deg, rgba(7, 124, 234, 0.00) 27.25%, rgba(26, 123, 214, 0.82) 58.86%);
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    padding: 40px;
+    opacity: 0;
+}
+
+.single_portfolio .text p {
+    color: var(--colorWhite);
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.single_portfolio .text h3 {
+    color: var(--colorWhite);
+}
+
+.single_portfolio:hover .text,
+.portfolio .slick-current .single_portfolio .text {
+    bottom: 0;
+    opacity: 1;
+}
+
+/* portfolio end */
+
+
+
+
+
+
+
+
 
 /*==========================
     HOME PAGE 01 END
