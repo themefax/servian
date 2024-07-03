@@ -74,4 +74,7 @@ $(function () {
     });
 
 
+    // COUNTER UP
+    $('.count').countUp();
+
 });
