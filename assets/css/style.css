@@ -108,7 +108,7 @@ textarea {
     padding: 12px 20px;
     outline: none;
     resize: none;
-    border: 1px solid #E4E7E9;
+    border: 1px solid #ddd;
     font-size: 16px;
     font-weight: 400;
 }
@@ -140,6 +140,7 @@ button {
     --LightBg: #ecf6ff;
     --headingFont: "Raleway", sans-serif;
     --paraFont: "DM Sans", sans-serif;
+    --boxShadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.08);
 }
 
 .common_btn {
@@ -151,8 +152,7 @@ button {
     padding: 15px 30px;
     position: relative;
     overflow: hidden;
-    text-transform: capitalize;
-    transition: all linear .3s;
+    text-transform: uppercase;
     z-index: 1;
 }
 
@@ -163,12 +163,16 @@ button {
 .common_btn::after {
     position: absolute;
     content: "";
-    width: 100%;
-    height: 0;
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
     background: var(--colorYellow);
-    bottom: 0;
-    left: 0;
-    transition: all linear .3s;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     z-index: -1;
 }
 
@@ -177,7 +181,8 @@ button {
 }
 
 .common_btn:hover:after {
-    height: 100%;
+    left: 0;
+    width: 100%;
 }
 
 .play_btn {
@@ -507,6 +512,7 @@ button {
     }
 }
 
+.single_blog_img::before,
 .single_services_img::before {
     position: absolute;
     top: 0;
@@ -521,6 +527,7 @@ button {
     transform: skewX(-25deg);
 }
 
+.single_blog:hover .single_blog_img:before,
 .single_services:hover .single_services_img:before {
     animation: hoverAnimi 1.2s;
     -webkit-animation: hoverAnimi 1.2s;
@@ -1219,7 +1226,7 @@ button {
 .single_services {
     background: var(--colorWhite);
     margin-left: 15px;
-    box-shadow: 0px 10px 50px 0px rgb(128 128 128 / 10%);
+    box-shadow: var(--boxShadow);
     margin-top: 25px;
     transition: all linear .3s;
     -webkit-transition: all linear .3s;
@@ -1346,8 +1353,6 @@ button {
 /* services end */
 
 /* team start */
-.team {}
-
 .single_team {
     padding: 30px;
     background: var(--LightBg);
@@ -1406,8 +1411,6 @@ button {
     -o-transition: all linear .3s;
     opacity: 0;
 }
-
-.single_team .single_team_img ul li {}
 
 .single_team .single_team_img ul li a {
     width: 35px;
@@ -1620,8 +1623,6 @@ button {
     background-size: cover !important;
 }
 
-.single_counter {}
-
 .single_counter .icon {
     width: 120px;
     height: 120px;
@@ -1812,6 +1813,295 @@ button {
 
 /* how it work end */
 
+/* testimonial start */
+.testimonial {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.single_testimonial_img {
+    margin-right: 50px;
+    height: 385px;
+    position: relative;
+    border: 2px solid var(--colorOrange);
+    padding: 5px;
+    border-top-left-radius: 150px;
+}
+
+.single_testimonial_img img {
+    border-top-left-radius: 150px;
+}
+
+.single_testimonial_img::after {
+    position: absolute;
+    content: "";
+    background: url(../images/quot_icon_left_blue.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80px;
+    height: 75px;
+    top: 0;
+    left: 0;
+}
+
+.testimonial_text_area {
+    overflow: hidden;
+}
+
+.single_testimonial_text {
+    margin: 0px 12px;
+}
+
+.single_testimonial_text .description {
+    line-height: 26px;
+}
+
+.single_testimonial_text .rating {
+    color: var(--ratingColor);
+    margin-top: 20px;
+}
+
+.single_testimonial_text h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.single_testimonial_text span {
+    display: block;
+    font-size: 14px;
+}
+
+.testimonial .slick-dots {
+    padding-right: 25px;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    gap: 15px;
+    width: auto;
+}
+
+.testimonial .slick-dots li button {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    opacity: 1;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+}
+
+.testimonial .slick-dots li.slick-active button {
+    background: var(--colorOrange);
+}
+
+.testimonial .slick-dots li button::after {
+    position: absolute;
+    content: "";
+    width: 29px;
+    height: 29px;
+    border: 2px solid var(--colorOrange);
+    top: -7px;
+    left: -7px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all linear .3s;
+    opacity: 0;
+}
+
+.testimonial .slick-dots li.slick-active button::after {
+    opacity: 1;
+}
+
+/* testimonial end */
+
+
+/* call to action start */
+.call_to_action {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.call_to_action_text {
+    padding: 90px 0px;
+}
+
+.call_to_action_text h2 {
+    color: var(--colorWhite);
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.call_to_action_text h4 {
+    color: var(--colorOrange);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+/* call to action end */
+
+
+/* blog start */
+.single_blog {
+    box-shadow: var(--boxShadow);
+    margin-left: 15px;
+    margin-top: 25px;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+}
+
+.single_blog_img {
+    display: block;
+    height: 285px;
+    overflow: hidden;
+    position: relative;
+}
+
+.single_blog_text {
+    padding: 30px;
+    position: relative;
+}
+
+.single_blog_text .category {
+    color: var(--colorWhite);
+    background: var(--colorPrimary);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px 15px;
+    position: absolute;
+    top: -35px;
+    left: -15px;
+}
+
+.single_blog_text .category:hover {
+    background: #0658a5;
+}
+
+.single_blog_text .category::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-right: 15px solid #045fb4;
+    border-bottom: 0px solid transparent;
+    top: -13px;
+    left: 0;
+}
+
+.single_blog_text ul {
+    gap: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.single_blog_text ul li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-right: 2px solid #ddd;
+    padding-right: 20px;
+    line-height: 15px;
+}
+
+.single_blog_text ul li:last-child {
+    padding: 0;
+    border: none;
+}
+
+.single_blog_text ul li span {
+    display: block;
+    width: 15px;
+    margin-right: 7px;
+}
+
+.single_blog_text p {
+    margin-top: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.single_blog:hover {
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+}
+
+/* blog end */
+
+
+/* footer start */
+footer {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.footer_top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #D8DDE120;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+}
+
+.footer_top li {
+    position: relative;
+    padding-left: 70px;
+    width: 33.33%;
+    /* border-right: 1px solid #D8DDE120; */
+}
+
+.footer_top li .icon {
+    width: 50px;
+    height: 50px;
+    background: var(--colorWhite);
+    border-radius: 50%;
+    padding: 13px;
+    line-height: 18px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+
+.footer_top li .text span {
+    display: block;
+    color: var(--colorWhite);
+    font-size: 14px;
+}
+
+.footer_top li .text a,
+.footer_top li .text p {
+    color: var(--colorWhite);
+    font-family: var(--headingFont);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.footer_top li .text a:hover {
+    color: var(--colorOrange);
+}
 
 
 
@@ -1819,6 +2109,7 @@ button {
 
 
 
+/* footer end */
 
 
 
