@@ -111,6 +111,7 @@ textarea {
     border: 1px solid #ddd;
     font-size: 16px;
     font-weight: 400;
+    border-radius: 4px;
 }
 
 input::placeholder,
@@ -130,14 +131,14 @@ button {
 :root {
     --colorPrimary: #077CEA;
     --colorYellow: #FFD83A;
-    /* --colorOrange: #FFB400; */
     --colorGreen: #06AE59;
     --colorRed: #DB3236;
+    /* --colorOrange: #FFB400; */
     --paraColor: #696969;
     --colorBlack: #16171A;
     --colorWhite: #ffffff;
     --ratingColor: #FFC700;
-    --LightBg: #ecf6ff;
+    --lightBg: #ecf6ff;
     --headingFont: "Raleway", sans-serif;
     --paraFont: "DM Sans", sans-serif;
     --boxShadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.08);
@@ -155,6 +156,11 @@ button {
     overflow: hidden;
     text-transform: uppercase;
     z-index: 1;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
 }
 
 .common_btn i,
@@ -172,6 +178,7 @@ button {
     top: 0;
     right: 0;
     background: var(--colorYellow);
+    border-radius: 4px;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -305,7 +312,7 @@ button {
 
 .section_heading h5 {
     color: var(--colorPrimary);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     position: relative;
     padding: 0px 30px;
@@ -401,6 +408,7 @@ button {
     margin-left: -45px;
     position: relative;
     z-index: 3;
+    border-radius: 0px 4px 4px 4px;
 }
 
 .book_now_btn::after {
@@ -566,11 +574,23 @@ button {
 .topbar {
     width: 100%;
     height: 40px;
-    background: #fff;
+    background: var(--colorWhite);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
+}
+
+.topbar::after {
+    position: absolute;
+    content: "";
+    width: 600px;
+    height: 100%;
+    background: var(--colorYellow);
+    top: 0;
+    right: 0;
+    z-index: -1;
+    clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .topbar_left {
@@ -713,13 +733,12 @@ button {
 .main_menu .droap_menu {
     position: absolute;
     width: 230px;
-    background: #fff;
+    background: var(--colorWhite);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     top: 100%;
     left: 0;
     opacity: 0;
     visibility: hidden;
-    transform: scaleY(.5);
     transform-origin: top;
     max-height: 450px;
     overflow-y: auto;
@@ -729,6 +748,11 @@ button {
     -moz-transition: all linear .2s;
     -ms-transition: all linear .2s;
     -o-transition: all linear .2s;
+    transform: scaleY(.5);
+    -webkit-transform: scaleY(.5);
+    -moz-transform: scaleY(.5);
+    -ms-transform: scaleY(.5);
+    -o-transform: scaleY(.5);
 }
 
 .main_menu .droap_menu::-webkit-scrollbar-thumb {
@@ -737,7 +761,7 @@ button {
 
 .main_menu .droap_menu::-webkit-scrollbar {
     scrollbar-width: thin !important;
-    background: #fff;
+    background: var(--colorWhite);
     height: 4px;
     width: 4px;
 }
@@ -889,6 +913,7 @@ button {
     -moz-transition: all linear .3s;
     -ms-transition: all linear .3s;
     -o-transition: all linear .3s;
+    border-radius: 4px;
 }
 
 .menu_search form .close_search:hover {
@@ -952,10 +977,10 @@ button {
 
 .banner_text h1 {
     color: var(--colorWhite);
-    font-size: 72px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 84px;
+    font-size: 84px;
+    /* font-style: normal; */
+    font-weight: 800;
+    /* line-height: 84px; */
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -965,6 +990,7 @@ button {
     font-size: 18px;
     font-weight: 400;
     opacity: .8;
+    max-width: 85%;
 }
 
 .banner_text ul {
@@ -987,9 +1013,9 @@ button {
 }
 
 .banner_text ul li .play_btn {
-    width: 55px;
-    height: 55px;
-    line-height: 55px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
     background: var(--colorWhite);
     color: var(--colorPrimary);
 }
@@ -1022,19 +1048,19 @@ button {
 }
 
 .banner_img .img::after {
-    position: absolute;
-    content: "";
-    background: url(../images/banner_image_shapes.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 650px;
-    height: 610px;
-    bottom: 0;
-    left: -100px;
-    z-index: -1;
-    animation: banner_animi linear 2s infinite alternate;
-    -webkit-animation: banner_animi linear 2s infinite alternate;
+    /* position: absolute; */
+    /* content: ""; */
+    /* background: url(../images/banner_image_shapes.png); */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* width: 650px; */
+    /* height: 610px; */
+    /* bottom: 0; */
+    /* left: -100px; */
+    /* z-index: -1; */
+    /* animation: banner_animi linear 2s infinite alternate; */
+    /* -webkit-animation: banner_animi linear 2s infinite alternate; */
 }
 
 @keyframes banner_animi {
@@ -1240,6 +1266,11 @@ button {
     -moz-transition: all linear .3s;
     -ms-transition: all linear .3s;
     -o-transition: all linear .3s;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .single_services_img {
@@ -1247,7 +1278,16 @@ button {
     position: relative;
     overflow: hidden;
     height: 240px;
+    border-radius: 8px 8px 0px 0px;
 }
+
+/* .single_services:hover .single_services_img img {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+} */
 
 .single_services_img span {
     background: var(--colorYellow);
@@ -1362,13 +1402,18 @@ button {
 /* team start */
 .single_team {
     padding: 30px;
-    background: var(--LightBg);
+    background: var(--lightBg);
     margin-top: 25px;
     transition: all linear .3s;
     -webkit-transition: all linear .3s;
     -moz-transition: all linear .3s;
     -ms-transition: all linear .3s;
     -o-transition: all linear .3s;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .single_team .single_team_img {
@@ -1726,6 +1771,7 @@ button {
     font-size: 18px;
     margin-left: 0;
     margin-right: 5px;
+    transform: rotate(0);
 }
 
 .download_app_text ul li .app_store {
@@ -1849,12 +1895,14 @@ button {
     margin-right: 50px;
     height: 385px;
     position: relative;
-    border: 2px solid var(--colorOrange);
+    border: 2px solid var(--colorYellow);
     padding: 5px;
+    border-radius: 10px;
     border-top-left-radius: 150px;
 }
 
 .single_testimonial_img img {
+    border-radius: 10px;
     border-top-left-radius: 150px;
 }
 
@@ -1923,7 +1971,7 @@ button {
 }
 
 .testimonial .slick-dots li.slick-active button {
-    background: var(--colorOrange);
+    background: var(--colorYellow);
 }
 
 .testimonial .slick-dots li button::after {
@@ -1931,7 +1979,7 @@ button {
     content: "";
     width: 29px;
     height: 29px;
-    border: 2px solid var(--colorOrange);
+    border: 2px solid var(--colorYellow);
     top: -7px;
     left: -7px;
     border-radius: 50%;
@@ -1969,7 +2017,7 @@ button {
 }
 
 .call_to_action_text h4 {
-    color: var(--colorOrange);
+    color: var(--colorYellow);
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 40px;
@@ -1989,6 +2037,7 @@ button {
     -moz-transition: all linear .3s;
     -ms-transition: all linear .3s;
     -o-transition: all linear .3s;
+    border-radius: 10px;
 }
 
 .single_blog_img {
@@ -1996,6 +2045,7 @@ button {
     height: 285px;
     overflow: hidden;
     position: relative;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .single_blog_text {
@@ -2012,6 +2062,7 @@ button {
     position: absolute;
     top: -35px;
     left: -15px;
+    border-radius: 0px 4px 4px 4px;
 }
 
 .single_blog_text .category:hover {
@@ -2095,7 +2146,6 @@ footer {
     position: relative;
     padding-left: 70px;
     width: 33.33%;
-    /* border-right: 1px solid #D8DDE120; */
 }
 
 .footer_top li .icon {
@@ -2125,7 +2175,7 @@ footer {
 }
 
 .footer_top li .text a:hover {
-    color: var(--colorOrange);
+    color: var(--colorYellow);
 }
 
 .footer_info .footer_logo {
