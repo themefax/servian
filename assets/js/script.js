@@ -132,11 +132,42 @@ $(function () {
 
 
 
+    // RANGE SLIDER
+    $('.basic').alRangeSlider();
+    const options = {
+        range: { min: 10, max: 1000, step: 1 },
+        initialSelectedValues: { from: 200, to: 800 },
+        grid: { minTicksStep: 1, marksStep: 5 },
+        theme: "dark",
+    };
+
+    $('.range_slider').alRangeSlider(options);
+    const options2 = {
+        orientation: "vertical"
+    };
 
 
+    // SELECT 2 JS
+    $(document).ready(function () {
+        $('.select_2').select2();
+    });
 
 
+    // STICKY SIDEBAR 
+    $(".sticky_sidebar").stickit({
+        top: 70,
+    })
 
 
+    // START RATING JS
+    const stars = document.querySelectorAll(".select_rating i");
+
+    stars.forEach((star, index1) => {
+        star.addEventListener("click", () => {
+            stars.forEach((star, index2) => {
+                index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+            });
+        });
+    });
 
 });
