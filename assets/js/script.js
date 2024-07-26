@@ -132,6 +132,26 @@ $(function () {
 
 
 
+    //=======BANNER 2 JS======
+    $('.banner_two').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        dots: false,
+        arrows: true,
+        nextArrow: '<i class="far fa-arrow-right nextArrow"></i>',
+        prevArrow: '<i class="far fa-arrow-left prevArrow"></i>',
+
+    });
+
+
+
+
+
+
+
+
     // RANGE SLIDER
     $('.basic').alRangeSlider();
     const options = {
