@@ -179,6 +179,8 @@ $(function () {
     })
 
 
+
+
     // START RATING JS
     const stars = document.querySelectorAll(".select_rating i");
 
@@ -201,6 +203,17 @@ $(function () {
 
 
 
+
+
+    //======marquee js=======
+    $('.marquee_animi').marquee({
+        speed: 100,
+        gap: 50,
+        delayBeforeStart: 0,
+        direction: 'left',
+        duplicated: true,
+        pauseOnHover: true
+    });
 
 
 
